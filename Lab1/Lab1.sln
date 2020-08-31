@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{AD10D2DF-09A9-4E8E-A58B-D30830A0191E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMultipathTree", "TestMultipathTree\TestMultipathTree.csproj", "{7BA48763-DA2D-40BC-809D-F2AB0BCC69FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{EA3ED36B-7C41-4D56-9499-2519061017E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD10D2DF-09A9-4E8E-A58B-D30830A0191E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD10D2DF-09A9-4E8E-A58B-D30830A0191E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD10D2DF-09A9-4E8E-A58B-D30830A0191E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD10D2DF-09A9-4E8E-A58B-D30830A0191E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA48763-DA2D-40BC-809D-F2AB0BCC69FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA48763-DA2D-40BC-809D-F2AB0BCC69FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA48763-DA2D-40BC-809D-F2AB0BCC69FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA48763-DA2D-40BC-809D-F2AB0BCC69FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3ED36B-7C41-4D56-9499-2519061017E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3ED36B-7C41-4D56-9499-2519061017E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3ED36B-7C41-4D56-9499-2519061017E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3ED36B-7C41-4D56-9499-2519061017E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF93145E-5BA5-4A3F-85AE-F0E715E4B5FD}
+	EndGlobalSection
+EndGlobal
