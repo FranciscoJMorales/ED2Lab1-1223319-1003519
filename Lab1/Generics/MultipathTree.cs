@@ -54,7 +54,9 @@ namespace Generics
                 {
                     pos.Next = new Node<T>(value)
                     {
-                        Previous = pos
+                        Previous = pos,
+                        FatherLeft = pos.FatherLeft,
+                        FatherRight = pos.FatherRight
                     };
                     Count++;
                 }
@@ -86,7 +88,9 @@ namespace Generics
                         pos.Previous.Next = new Node<T>(value)
                         {
                             Previous = pos.Previous,
-                            Next = pos
+                            Next = pos,
+                            FatherLeft = pos.FatherLeft,
+                            FatherRight = pos.FatherRight
                         };
                         pos.Previous = pos.Previous.Next;
                     }
@@ -94,8 +98,16 @@ namespace Generics
                     {
                         pos.Previous = new Node<T>(value)
                         {
-                            Next = pos
+                            Next = pos,
+                            FatherLeft = pos.FatherLeft,
+                            FatherRight = pos.FatherRight
                         };
+                        if (pos.FatherLeft != null)
+                            pos.FatherLeft.Right = pos.Previous;
+                        if (pos.FatherRight != null)
+                            pos.FatherRight.Left = pos.Previous;
+                        if (Root == pos)
+                            Root = pos.Previous;
                     }
                     Count++;
                 }
@@ -121,6 +133,91 @@ namespace Generics
                 return false;
             else
                 return true;
+        }
+
+        public List<T> Preorden()
+        {
+            if (Root != null)
+            {
+                List<T> path = new List<T>();
+                Preorden(Root, path);
+                return path;
+            }
+            else
+                return new List<T>();
+        }
+
+        private void Preorden(Node<T> pos, List<T> path)
+        {
+            Node<T> aux = pos;
+            while (pos != null)
+            {
+                path.Add(pos.Value);
+                pos = pos.Next;
+            }
+            if (aux.Left != null)
+                Preorden(aux.Left, path);
+            while (aux != null)
+            {
+                if (aux.Right != null)
+                    Preorden(aux.Right, path);
+                aux = aux.Next;
+            }
+        }
+
+        public List<T> Inorden()
+        {
+            if (Root != null)
+            {
+                List<T> path = new List<T>();
+                Inorden(Root, path);
+                return path;
+            }
+            else
+                return new List<T>();
+        }
+
+        private void Inorden(Node<T> pos, List<T> path)
+        {
+            if (pos.Left != null)
+                Preorden(pos.Left, path);
+            while (pos != null)
+            {
+                path.Add(pos.Value);
+                if (pos.Right != null)
+                    Preorden(pos.Right, path);
+                pos = pos.Next;
+            }
+        }
+
+        public List<T> Postorden()
+        {
+            if (Root != null)
+            {
+                List<T> path = new List<T>();
+                Postorden(Root, path);
+                return path;
+            }
+            else
+                return new List<T>();
+        }
+
+        private void Postorden(Node<T> pos, List<T> path)
+        {
+            Node<T> aux = pos;
+            if (aux.Left != null)
+                Preorden(aux.Left, path);
+            while (aux != null)
+            {
+                if (aux.Right != null)
+                    Preorden(aux.Right, path);
+                aux = aux.Next;
+            }
+            while (pos != null)
+            {
+                path.Add(pos.Value);
+                pos = pos.Next;
+            }
         }
 
         public void Clear()
