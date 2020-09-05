@@ -2,7 +2,7 @@
 
 namespace Generics
 {
-    public class Node<T> where T : IComparable
+    class Node<T> where T : IComparable
     {
         public Node<T> FatherLeft { get; set; } = null;
         public Node<T> FatherRight { get; set; } = null;

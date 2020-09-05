@@ -8,7 +8,7 @@ namespace Generics
     {
         private Node<T> Root { get; set; } = null;
         private int Degree { get; set; }
-        private int Count = 0;
+        public int Count = 0;
 
         public MultipathTree(int degree)
         {
@@ -61,7 +61,7 @@ namespace Generics
                     Count++;
                 }
             }
-            else
+            else if (value.CompareTo(pos.Value) < 0)
             {
                 if (IsFull(pos))
                 {
@@ -180,12 +180,12 @@ namespace Generics
         private void Inorden(Node<T> pos, List<T> path)
         {
             if (pos.Left != null)
-                Preorden(pos.Left, path);
+                Inorden(pos.Left, path);
             while (pos != null)
             {
                 path.Add(pos.Value);
                 if (pos.Right != null)
-                    Preorden(pos.Right, path);
+                    Inorden(pos.Right, path);
                 pos = pos.Next;
             }
         }
@@ -206,11 +206,11 @@ namespace Generics
         {
             Node<T> aux = pos;
             if (aux.Left != null)
-                Preorden(aux.Left, path);
+                Postorden(aux.Left, path);
             while (aux != null)
             {
                 if (aux.Right != null)
-                    Preorden(aux.Right, path);
+                    Postorden(aux.Right, path);
                 aux = aux.Next;
             }
             while (pos != null)
