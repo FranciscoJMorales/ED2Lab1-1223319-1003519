@@ -8,11 +8,10 @@ namespace TestMultipathTree
     {
         static void Main(string[] args)
         {
-            int grado;
             try
             {
                 Console.WriteLine("Ingrese el numero del grado para el arbol");
-                grado = int.Parse(Console.ReadLine());
+                int grado = int.Parse(Console.ReadLine());
                 MultipathTree<int> tree = new MultipathTree<int>(grado);
                 Console.WriteLine("Ingrese los valores");
                 var val = Console.ReadLine().Split(',');
@@ -20,12 +19,6 @@ namespace TestMultipathTree
                 {
                     tree.Add(int.Parse(n));
                 }
-                /*do
-                {
-                    insertarArbol(tree);
-                    Console.WriteLine("¿Desea seguir ingresando valores? 1.Si 2.No");
-                    insertar = int.Parse(Console.ReadLine());
-                } while (insertar == 1);*/
                 Console.WriteLine("Preorden:");
                 Console.WriteLine(String(tree.Preorden()));
                 Console.WriteLine("Inorden:");
@@ -40,17 +33,6 @@ namespace TestMultipathTree
             {
                 Console.WriteLine("Error producido no controlado");
             }
-           
-            
-        }
-
-        static void insertarArbol(MultipathTree<int> tree)
-        {
-            int valor;
-            Console.WriteLine("Ingrese el valor a ingresar");
-            tree.Add(valor = int.Parse(Console.ReadLine()));
-           
-        
         }
 
         static string String(List<int> val)
@@ -60,6 +42,8 @@ namespace TestMultipathTree
             {
                 text += n.ToString() + ",";
             }
+            if (text.EndsWith(','))
+                text = text.Remove(text.Length - 1);
             return text;
         }
     }
