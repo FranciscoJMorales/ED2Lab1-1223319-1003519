@@ -15,13 +15,11 @@ namespace api.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-        MultipathTree<Movie> Tree;
-
         [HttpGet]
         public IEnumerable<Movie> Get()
         {
-            if (Tree != null)
-                return Tree.Inorden();
+            if (Storage.Instance.Tree != null)
+                return Storage.Instance.Tree.Inorden();
             else
                 return null;
         }
@@ -31,14 +29,14 @@ namespace api.Controllers
         public IEnumerable<Movie> Get(string traversal)
         {
 
-            if (Tree == null)
+            if (Storage.Instance.Tree == null)
                 return null;
             else if (traversal == "preorden")
-                return Tree.Preorden();
+                return Storage.Instance.Tree.Preorden();
             else if (traversal == "inorden")
-                return Tree.Inorden();
+                return Storage.Instance.Tree.Inorden();
             else if (traversal == "postorden")
-                return Tree.Postorden();
+                return Storage.Instance.Tree.Postorden();
             else
                 return null;
         }
@@ -52,7 +50,7 @@ namespace api.Controllers
                 file.CopyToAsync(content);
                 var text = Encoding.ASCII.GetString(content.ToArray());
                 var deg = JsonSerializer.Deserialize<int>(text);
-                Tree = new MultipathTree<Movie>(deg);
+                Storage.Instance.Tree = new MultipathTree<Movie>(deg);
                 return Ok();
             }
             catch
@@ -67,16 +65,20 @@ namespace api.Controllers
         {
             try
             {
-                using var content = new MemoryStream();
-                file.CopyToAsync(content);
-                var text = Encoding.ASCII.GetString(content.ToArray());
-                //var list = JsonSerializer.Deserialize<List<Movie>>(text, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-                var item = JsonSerializer.Deserialize<Movie>(text, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-                //foreach (Movie item in list)
-                //{
-                //  Tree.Add(item);
-                //}
-                return Ok();
+                if (Storage.Instance.Tree != null)
+                {
+                    using var content = new MemoryStream();
+                    file.CopyToAsync(content);
+                    var text = Encoding.ASCII.GetString(content.ToArray());
+                    var list = JsonSerializer.Deserialize<List<Movie>>(text, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                    foreach (Movie item in list)
+                    {
+                        Storage.Instance.Tree.Add(item);
+                    }
+                    return Ok();
+                }
+                else
+                    return StatusCode(500);
             }
             catch
             {

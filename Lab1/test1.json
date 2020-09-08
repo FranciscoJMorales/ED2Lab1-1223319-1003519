@@ -4,7 +4,7 @@
     "imdbRating": 6.1,
     "genre": null,
     "releaseDate": "Jun 12 1998",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "The Land Girls"
   },
   {
@@ -12,7 +12,7 @@
     "imdbRating": 6.9,
     "genre": "Drama",
     "releaseDate": "Aug 07 1998",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "First Love, Last Rites"
   },
   {
@@ -20,12 +20,12 @@
     "imdbRating": 6.8,
     "genre": "Comedy",
     "releaseDate": "Aug 28 1998",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "I Married a Strange Person"
   },
   {
     "director": null,
-    "imdbRating": null,
+    "imdbRating": 0,
     "genre": "Comedy",
     "releaseDate": "Sep 11 1998",
     "rottenTomatoesRating": 13,
@@ -41,10 +41,10 @@
   },
   {
     "director": null,
-    "imdbRating": null,
+    "imdbRating": 0,
     "genre": null,
     "releaseDate": "Jan 15 1999",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Mississippi Mermaid"
   },
   {
@@ -52,7 +52,7 @@
     "imdbRating": 7.7,
     "genre": null,
     "releaseDate": "Apr 04 1999",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Following"
   },
   {
@@ -60,7 +60,7 @@
     "imdbRating": 3.8,
     "genre": "Comedy",
     "releaseDate": "Apr 09 1999",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Foolish"
   },
   {
@@ -105,10 +105,10 @@
   },
   {
     "director": "Richard Fleischer",
-    "imdbRating": null,
+    "imdbRating": 0,
     "genre": null,
     "releaseDate": "Sep 23 1970",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Tora, Tora, Tora"
   },
   {
@@ -121,10 +121,10 @@
   },
   {
     "director": null,
-    "imdbRating": null,
+    "imdbRating": 0,
     "genre": null,
     "releaseDate": "Sep 17 2020",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Over the Hill to the Poorhouse"
   },
   {
@@ -132,7 +132,7 @@
     "imdbRating": 7,
     "genre": null,
     "releaseDate": "Aug 01 2044",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Wilson"
   },
   {
@@ -140,7 +140,7 @@
     "imdbRating": 6.1,
     "genre": null,
     "releaseDate": "Jan 01 1970",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Darling Lili"
   },
   {
@@ -156,7 +156,7 @@
     "imdbRating": 8.9,
     "genre": "Drama",
     "releaseDate": "Apr 13 1957",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "12 Angry Men"
   },
   {
@@ -164,7 +164,7 @@
     "imdbRating": 8.1,
     "genre": "Drama",
     "releaseDate": "Dec 27 1995",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Twelve Monkeys"
   },
   {
@@ -173,7 +173,7 @@
     "genre": "Drama",
     "releaseDate": "Nov 09 1972",
     "rottenTomatoesRating": 57,
-    "title": 1776
+    "title": "1776"
   },
   {
     "director": "Steven Spielberg",
@@ -181,14 +181,14 @@
     "genre": "Comedy",
     "releaseDate": "Dec 14 1979",
     "rottenTomatoesRating": 33,
-    "title": 1941
+    "title": "1941"
   },
   {
     "director": null,
     "imdbRating": 6.3,
     "genre": "Thriller/Suspense",
     "releaseDate": "Jun 29 2007",
-    "rottenTomatoesRating": null,
+    "rottenTomatoesRating": 0,
     "title": "Chacun sa nuit"
   }
 ]

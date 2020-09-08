@@ -13,7 +13,7 @@ namespace TestMultipathTree
                 Console.WriteLine("Ingrese el numero del grado para el arbol");
                 int grado = int.Parse(Console.ReadLine());
                 MultipathTree<int> tree = new MultipathTree<int>(grado);
-                Console.WriteLine("Ingrese los valores");
+                Console.WriteLine("Ingrese todos los valores separados por comas");
                 var val = Console.ReadLine().Split(',');
                 foreach (string n in val)
                 {
@@ -25,6 +25,7 @@ namespace TestMultipathTree
                 Console.WriteLine(String(tree.Inorden()));
                 Console.WriteLine("Postorden:");
                 Console.WriteLine(String(tree.Postorden()));
+                Console.WriteLine("Cantidad de elementos:");
                 Console.WriteLine(tree.Count.ToString());
                 tree.Clear();
                 Console.ReadLine();
