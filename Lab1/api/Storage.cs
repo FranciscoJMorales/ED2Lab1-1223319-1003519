@@ -20,11 +20,5 @@ namespace api
         }
 
         public MultipathTree<Movie> Tree;
-        /*public Arbol<Farmaco> Indice = new Arbol<Farmaco>();
-        public Arbol<Farmaco> SinExistencias = new Arbol<Farmaco>();
-        public List<FarmacoPrecio> Pedidos = new List<FarmacoPrecio>();
-        public string Farmacos;
-        public string[] ListadoFarmacos;
-        public string dir;*/
     }
 }

@@ -14,11 +14,9 @@ namespace TestMultipathTree
                 Console.WriteLine("Ingrese el numero del grado para el arbol");
                 int grado = int.Parse(Console.ReadLine());
                 MultipathTree<int> tree = new MultipathTree<int>(grado);
-
                 int backmenu = 0;
                 do
                 {
-
                     Console.WriteLine("¿Qué metodo desea utilizar para la inserción? \n 1.Ingresarlos a través de comas \n 2. Cargar un archivo de texto");
                     int op = int.Parse(Console.ReadLine());
                     switch (op)
@@ -34,22 +32,19 @@ namespace TestMultipathTree
                         case 2:
                             Console.WriteLine("Coloque el txt encima de la consola");
                             string dir = Console.ReadLine();
-
                             Insertartxt(dir, tree);
                             break;
-
                     }
-
                     Console.WriteLine("¿Desea seguir ingresando valores? 1.Si 2.No");
                     backmenu = int.Parse(Console.ReadLine());
                 } while (backmenu == 1);
-
                 Console.WriteLine("Preorden:");
                 Console.WriteLine(String(tree.Preorden()));
                 Console.WriteLine("Inorden:");
                 Console.WriteLine(String(tree.Inorden()));
                 Console.WriteLine("Postorden:");
                 Console.WriteLine(String(tree.Postorden()));
+                Console.WriteLine("Cantidad de elementos:");
                 Console.WriteLine(tree.Count.ToString());
                 tree.Clear();
                 Console.ReadLine();
@@ -81,17 +76,13 @@ namespace TestMultipathTree
                 {
                     archivo = lector.ReadToEnd();
                 }
-
                 string[] list;
-                list = archivo.Split(new char[] { '\r', '\t', '\n', ',', }, StringSplitOptions.RemoveEmptyEntries);
-                string[] text = (string[])list.Clone();
-
-                for (int i = 1; i < text.Length; i++)
+                list = archivo.Split(new char[] { '\r', '\t', '\n', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < list.Length; i++)
                 {
-                    if (text[i] != "")
+                    if (list[i] != "")
                     {
-                        tree.Add(int.Parse(text[i]));
-
+                        tree.Add(int.Parse(list[i]));
                     }
                 }
             }
